@@ -158,7 +158,8 @@ In that case, we could use Limiter.
 > By the way you can apply Compressor to Desktop Audio and other various capture device audio outputs to make them stay in a range most of the time!  
   Compressor for Desktop Audio could be set in a bit different way: you can set Threshold as 'I hope the game usually doesn't go louder than this' and then set Ratio to control the peak of maximum expected volume.
 >
-> ![Compressor for Desktop Audio][Compressor Input-Output Graph]  
+> ![Compressor for Desktop Audio][Compressor Input-Output Graph]
+>
 > If you want to make a hard limit for the desktop audio, Limiter can be helpful.
 
 # Limiter
