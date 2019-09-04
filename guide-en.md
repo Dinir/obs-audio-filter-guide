@@ -79,8 +79,6 @@ This filter has a very simple interface too, and this time the change is instant
 
 When you applied a filter and as a result the channel signal became quieter, you can apply this filter to compensate for the loss.
 
-This filter has another use than just 'boosting up' the signal: Compressor can make a better adjustment for a signal that's loud in overall.
-
 # Noise Gate
 
 ![Noise Gate Window][Window: Noise Gate]
