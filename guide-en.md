@@ -114,9 +114,52 @@ You might not need to touch Attack/Hold/Release Time, but if you hear your first
 
 ![Compressor Window][Window: Compressor]
 
-| Problem  |   |
+| Problem  | Voice is sometimes too loud, sometimes too quiet. |
 | -------- | ---------------- |
-| Function |   |
+| Function | Compress loud signals to make the overall signal constant. |
+
+> **How to set**
+> 1. Check the range of your talking. Try talking in various ways and see where the peak meter stays.
+> 2. Decide where you want your range to be in the peak meter.
+> 3. Squeeze the range so it has the same length of the range you want.
+> 4. Drag up the range to the range you want.
+
+This should be the most complex filter among the filters introduced here. But when you make enough audio test to get the current range of your voice and set the target range you want your voice to stay in, setting the compressor to your environment will be clear.
+
+After figuring out which range you want your voice to stay in, you can first *squeeze* the signal, then make up for the volume loss caused by the squeezing.
+
+- Any signal that goes over **Threshold** will be squeezed by the **Ratio**.
+- The squeezed signals can be amplified back up by **Output Gain**. It will be added to the signal by the fixed amount.
+
+There's a setting for Attack/Release Time.
+
+- When the signal reaches the Threshold, the squeezing will start gradually growing up to the Ratio, over **Attack Time**.
+- When the signal goes under the Threshold, the squeezing will start gradually wearing off over **Release Time**.
+
+Here's an *example case* of setting up the compressor to make your voice constant and loud enough. The specific numbers can be various due to many reasons: how close your mouth is to your mic, how sensitive your mic is, how loud your desktop audio usually goes, and many others...
+
+When you tried talking in various ways, sometimes the peak goes between -5 and -15, -15 and -25, and -30 and -35.
+You want to make your voice range to be between -10 and -20.
+
+![Compressor Explanationary Picture][Compressor Steps]
+
+Your original voice range could be therefore between -5 and -35. You don't need to be precise when define the range. Just check the most biggest peak and most smallest peak when you were talking.
+
+Let's say game audio is usually going around -20 and -30. Most of the cases you want your voice to be louder than game audio and other desktop sounds, so let's set the target range to -10 and -20.
+
+First you want to squeeze the signals. Original range is 30dB wide (-5 ~ -35), and target range is 10dB wide (-10 ~ -20). Squeeze the original range by Ratio of 3:1 so it becomes 10dB wide.
+
+With this change, the overall voice should be much quieter now. The changed range is between -25 and -35 now. You need to make up the volume loss, so let's add Output Gain of 15dB. The range will be now -10 and -20, which is the target range.
+
+Now most of the time you speak to the mic, your voice will be in between -10 and -20. Unless you shout right into the mic, which will result going way over -10, because Compressor is not functionally 'limiting' the volume. 
+
+In that case, we could use Limiter.
+
+> By the way you can apply Compressor to Desktop Audio and other various capture device audio outputs to make them stay in a range most of the time!  
+  Compressor for Desktop Audio could be set in a bit different way: you can set Threshold as 'I hope the game usually doesn't go louder than this' and then set Ratio to control the peak of maximum expected volume.
+>
+> ![Compressor for Desktop Audio][Compressor Input-Output Graph]  
+> If you want to make a hard limit for the desktop audio, Limiter can be helpful.
 
 # Limiter
 
@@ -135,5 +178,7 @@ I'll list some case
 [Window: Noise Suppression]: ./image/en/ns-window.png "window of Noise Suppression"
 [Window: Noise Gate]: ./image/en/ng-window.png "window of Noise Gate"
 [Window: Compressor]: ./image/en/c-window.png "window of Compressor"
+[Compressor Steps]: ./image/compressor-steps.png "Step by step process to set up Compressor"
+[Compressor Input-Output Graph]: ./image/compressor-io-graph.png "Compressor Concept in an Input-Output Graph"
 [Window: Gain]: ./image/en/g-window.png "window of Gain"
 [Window: Limiter]: ./image/en/l-window.png "window of Limiter"
