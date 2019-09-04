@@ -2,18 +2,18 @@ So you decided to use your mic on your stream! Which would be very helpful towar
 
 But one thing, your viewers are supposed to hear your voice and **all kind of other noises**, and it's hard to stay in your stream if the noises are too interrupting to watch your stream.
 
-There are 4 audio filters I will explain, that will drastically improve your overall audio, and if you are done setting your basic configuration for them, it will be easier to make change when someone tells you there's an issue with your audio.
+There are 4 audio filters I will explain, that will drastically improve your overall audio, and if you are done setting your basic configuration for them, it will be easier to make changes when someone tells you there's an issue with your audio.
 
 Before going into the explanation, I want to tell you that all these filters can also be applied to any of your audio sources, including Desktop Audio. And the filters can improve these audio sources in the same way they can improve your voice.
 
 # Table of Contents
 
-- Quick look at [the Peak Meter and the Filter Window](#about-the-interface).
+- A quick look at [the Peak Meter and the Filter Window](#about-the-interface).
 - Is there static noise around you?  
   Try [Noise Suppression](#noise-suppression) and [Noise Gate](#noise-gate).
 - Your voice is too quiet even at maximum volume?  
   Try [Gain](#gain).
-- Your voice is sometimes too loud, and sometimes too quite?  
+- Your voice is sometimes too loud, and sometimes too quiet?  
   Try [Compressor](#compressor).
 - Worried about your voice maxing out and distorting when you scream?  
   Try [Limiter](#limiter).
@@ -26,9 +26,9 @@ Before going into the explanation, I want to tell you that all these filters can
 
 ![Peak Meter][OBS Peak Meter]
 
-Here each channel will show the peak of the signal they receive in real time. All active filters affect these meters. Here I set it to be vertical, but default view is horizontal. There could be more than just two channels if you have more audio devices connected to the computer!
+Here each channel will show the peak of the signal they receive in real-time. All active filters affect these meters. Here I set it to be vertical, but the default view is horizontal. There could be more than just two channels if you have more audio devices connected to the computer!
 
-Right click or click the gear icon to access filters and other options.
+Right-click or click the gear icon to access filters and other options.
 
 Detailed info about how to read this meter is available at [the official wiki][Reading the Volume Meter].
 
@@ -53,7 +53,7 @@ Remember that **only the first filter in the order will receive the raw audio in
 
 ![Noise Suppression window][Window: Noise Suppression]
 
-| Problem  | There's a background noise. |
+| Problem  | There's background noise. |
 | -------- | ---------------- |
 | Function | Reduce the audio by the level. |
 
@@ -63,7 +63,7 @@ This filter has a very simple interface, one slider named 'Suppression Level' an
 
 Noise Suppression is good at cutting mild noises like an electric fan in your room.
 
-Since it will reduce the volume of the channel, it's good to set up a Gain filter to compensate the volume loss.
+Since it will reduce the volume of the channel, it's good to set up a Gain filter to compensate for the volume loss.
 
 # Gain
 
@@ -75,11 +75,11 @@ Since it will reduce the volume of the channel, it's good to set up a Gain filte
 
 > **How to set up** Set the slider to the value you want to add to the signal.
 
-This filter has a very simple interface too, and this time the change is clearly visible: Let's say you set the slider to 5dB, you'll see the peak meter increase by 5dB for the same signal.
+This filter has a very simple interface too, and this time the change is instantly visible: Let's say you set the slider to 5dB, you'll see the peak meter increase by 5dB for the same signal.
 
 When you applied a filter and as a result the channel signal became quieter, you can apply this filter to compensate for the loss.
 
-This filter has another use than just 'boosting up' the signal: Compressor can make a better adjustment for signal that's loud in overall.
+This filter has another use than just 'boosting up' the signal: Compressor can make a better adjustment for a signal that's loud in overall.
 
 # Noise Gate
 
@@ -91,7 +91,7 @@ This filter has another use than just 'boosting up' the signal: Compressor can m
 
 > **How to set up**  
 > 1. Set two thresholds all the way to the left.  
-> Slowly drag Close Threshold to right until you see no peak meter movement. It should show a movement when you talk.
+> Slowly drag Close Threshold to the right until you see no peak meter movement. It should show a movement when you talk.
 > 2. Try talking to see where the peak stays after you finished talking.  
 > Move Open Threshold to a value around the peak value you saw.  
 > Try talking to see if the peak meter goes silent after talking.  
@@ -99,8 +99,8 @@ This filter has another use than just 'boosting up' the signal: Compressor can m
 
 Basically what it does is muting and unmuting at set conditions.
 
-- Signal goes quieter than **Close Threshold**, the channel is muted.
-- Signal goes louder than **Open Threshold**, the channel is unmuted.
+- A signal goes quieter than **Close Threshold**, the channel is muted.
+- A signal goes louder than **Open Threshold**, the channel is unmuted.
 
 It comes handy when you want to ensure complete silence on the mic channel or more strong control on the background noise.
 
@@ -121,7 +121,7 @@ You might not need to touch Attack/Hold/Release Time, but if you hear your first
 > **How to set**
 > 1. Check the range of your talking. Try talking in various ways and see where the peak meter stays.
 > 2. Decide where you want your range to be in the peak meter.
-> 3. Squeeze the range so it has the same length of the range you want.
+> 3. Squeeze the range so it has the same length as the range you want.
 > 4. Drag up the range to the range you want.
 
 This should be the most complex filter among the filters introduced here. But when you make enough audio test to get the current range of your voice and set the target range you want your voice to stay in, setting the compressor to your environment will be clear.
@@ -145,15 +145,15 @@ You want to make your voice range to be between -10 and -20.
 
 ![Compressor Explanationary Picture][Compressor Steps]
 
-Your original voice range could be therefore between -5 and -35. You don't need to be precise when define the range. Just check the most biggest peak and most smallest peak when you were talking.
+Your original voice range could be therefore between -5 and -35. You don't need to be precise when defining the range. Just check the biggest and smallest peak when you were talking.
 
 Let's say game audio is usually going around -20 and -30. Most of the cases you want your voice to be louder than game audio and other desktop sounds, so let's set the target range to -10 and -20.
 
-First you want to squeeze the signals. Original range is 30dB wide (-5 ~ -35), and target range is 10dB wide (-10 ~ -20). Squeeze the original range by Ratio of 3:1 so it becomes 10dB wide.
+First, you want to squeeze the signals. Original range is 30dB wide (-5 ~ -35), and target range is 10dB wide (-10 ~ -20). Squeeze the original range by Ratio of 3:1 so it becomes 10dB wide.
 
 With this change, the overall voice should be much quieter now. The changed range is between -25 and -35 now. You need to make up the volume loss, so let's add Output Gain of 15dB. The range will be now -10 and -20, which is the target range.
 
-Now most of the time you speak to the mic, your voice will be in between -10 and -20. Unless you shout right into the mic, which will result going way over -10, because Compressor is not functionally 'limiting' the volume. 
+Now, most of the time you speak to the mic, your voice will be in between -10 and -20. Unless you shout right into the mic, which will result going way over -10, because Compressor is not functionally 'limiting' the volume. 
 
 In that case, we could use Limiter.
 
@@ -176,7 +176,7 @@ In that case, we could use Limiter.
 
 This is basically a compressor, with differences being fast Attack Time and Ratio of ∞:1.
 
-Any signal that goes over the threshold will be squeezed under it. But it's not like cutting the exceeded parts with a scissor. It will be done smooth, so viewers won't hear annoying changes on the voice over the stream.
+Any signal that goes over the threshold will be squeezed under it. But it's not like cutting the exceeded parts with a scissor. It will be done smoothly, so viewers won't hear annoying changes on the voice over the stream.
 
 When the signal goes under the Threshold, the squeezing will start gradually wearing off over **Release**.
 
@@ -184,9 +184,9 @@ But there's more! You can set it so you can change the threshold directly on the
 
 ![Peak Meter][OBS Peak Meter]
 
-Usually Limiter should be the last filter for a channel - it puts the final nail to the ceiling of the peak! And volume control shown on the Peak Meter controls the volume of the final signal that comes from the last filter for the channel. If the volume control is set at 0.0 dB, the final signal will be kept as it is.
+Usually, Limiter should be the last filter for a channel - it puts the final nail to the ceiling of the peak! And volume control shown on the Peak Meter controls the volume of the final signal that comes from the last filter for the channel. If the volume control is set at 0.0 dB, the final signal will be kept as it is.
 
-<u>If you set the Limiter threshold to 0dB, the threshold is kind of synced to the volume control.</u> A volume control will cut the exceeded signal, so when a signal goes louder than that it doesn't sound nice. But if it's also the threshold of the Limiter, the signal will be squeezed in rather smooth manner at that point, making it much more better to listen.
+<u>If you set the Limiter threshold to 0dB, the threshold is kind of sync to the volume control.</u> A volume control will cut the exceeded signal, so when a signal goes louder than that it doesn't sound nice. But if it's also the threshold of the Limiter, the signal will be squeezed in rather a smooth manner at that point, making it much better to listen.
 
 [Window: Noise Suppression]: ./image/en/ns-window.png "window of Noise Suppression"
 [Window: Noise Gate]: ./image/en/ng-window.png "window of Noise Gate"
