@@ -112,7 +112,7 @@ You might not need to touch Attack/Hold/Release Time, but if you hear your first
 | -------- | ---------------- |
 | Function | Compress loud signals to make the overall signal constant. |
 
-> **How to set**
+> **How to set up**
 > 1. Check the range of your talking. Try talking in various ways and see where the peak meter stays.
 > 2. Decide where you want your range to be in the peak meter.
 > 3. Squeeze the range so it has the same length as the range you want.
@@ -166,7 +166,7 @@ In that case, we could use Limiter.
 | -------- | ---------------- |
 | Function | Squeeze any signal under the level. |
 
-> **How to set** Set the threshold to a value you hope your voice to never go louder.
+> **How to set up** Set the threshold to a value you hope your voice to never go louder.
 
 This is basically a compressor, with differences being fast Attack Time and Ratio of ∞:1.
 
