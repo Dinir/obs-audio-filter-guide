@@ -91,11 +91,11 @@ This filter has another use than just 'boosting up' the signal: Compressor can m
 
 > **How to set up**  
 > 1. Set two thresholds all the way to the left.  
-  Slowly drag Close Threshold to right until you see no peak meter movement. It should show a movement when you talk.
+> Slowly drag Close Threshold to right until you see no peak meter movement. It should show a movement when you talk.
 > 2. Try talking to see where the peak stays after you finished talking.  
-  Move Open Threshold to a value around the peak value you saw.  
-  Try talking to see if the peak meter goes silent after talking.  
-  Keep adjusting the threshold until you find a value where the channel effectively goes silent after your voice.
+> Move Open Threshold to a value around the peak value you saw.  
+> Try talking to see if the peak meter goes silent after talking.  
+> Keep adjusting the threshold until you find a value where the channel effectively goes silent after your voice.
 
 Basically what it does is muting and unmuting at set conditions.
 
@@ -131,10 +131,12 @@ After figuring out which range you want your voice to stay in, you can first *sq
 - Any signal that goes over **Threshold** will be squeezed by the **Ratio**.
 - The squeezed signals can be amplified back up by **Output Gain**. It will be added to the signal by the fixed amount.
 
-There's a setting for Attack/Release Time.
+There's a setting for Attack/Release.
 
-- When the signal reaches the Threshold, the squeezing will start gradually growing up to the Ratio, over **Attack Time**.
-- When the signal goes under the Threshold, the squeezing will start gradually wearing off over **Release Time**.
+- When the signal reaches the Threshold, the squeezing will start gradually growing up to the Ratio, over **Attack**.
+- When the signal goes under the Threshold, the squeezing will start gradually wearing off over **Release**.
+
+## Setting Example
 
 Here's an *example case* of setting up the compressor to make your voice constant and loud enough. The specific numbers can be various due to many reasons: how close your mouth is to your mic, how sensitive your mic is, how loud your desktop audio usually goes, and many others...
 
@@ -156,7 +158,7 @@ Now most of the time you speak to the mic, your voice will be in between -10 and
 In that case, we could use Limiter.
 
 > By the way you can apply Compressor to Desktop Audio and other various capture device audio outputs to make them stay in a range most of the time!  
-  Compressor for Desktop Audio could be set in a bit different way: you can set Threshold as 'I hope the game usually doesn't go louder than this' and then set Ratio to control the peak of maximum expected volume.
+> Compressor for Desktop Audio could be set in a bit different way: you can set Threshold as 'I hope the game usually doesn't go louder than this' and then set Ratio to control the peak of maximum expected volume.
 >
 > ![Compressor for Desktop Audio][Compressor Input-Output Graph]
 >
@@ -166,15 +168,25 @@ In that case, we could use Limiter.
 
 ![Limiter Window][Window: Limiter]
 
-| Problem  |   |
+| Problem  | My voice is squashed at the max peak. |
 | -------- | ---------------- |
-| Function |   |
+| Function | Squeeze any signal under the level. |
 
-# Troubleshooting
+> **How to set** Set the threshold to a value you hope your voice to never go louder.
 
-Okay, so you're all set up with audio configuration! It should be good for now, but as time goes there should be always someone who's gonna point out an issue with your audio setting. It could be a viewer, or you yourself!
+This is basically a compressor, with differences being fast Attack Time and Ratio of ∞:1.
 
-I'll list some case
+Any signal that goes over the threshold will be squeezed under it. But it's not like cutting the exceeded parts with a scissor. It will be done smooth, so viewers won't hear annoying changes on the voice over the stream.
+
+When the signal goes under the Threshold, the squeezing will start gradually wearing off over **Release**.
+
+But there's more! You can set it so you can change the threshold directly on the Peak Meter, instead of going to the filter window and selecting the Limiter.
+
+![Peak Meter][OBS Peak Meter]
+
+Usually Limiter should be the last filter for a channel - it puts the final nail to the ceiling of the peak! And volume control shown on the Peak Meter controls the volume of the final signal that comes from the last filter for the channel. If the volume control is set at 0.0 dB, the final signal will be kept as it is.
+
+<u>If you set the Limiter threshold to 0dB, the threshold is kind of synced to the volume control.</u> A volume control will cut the exceeded signal, so when a signal goes louder than that it doesn't sound nice. But if it's also the threshold of the Limiter, the signal will be squeezed in rather smooth manner at that point, making it much more better to listen.
 
 [Window: Noise Suppression]: ./image/en/ns-window.png "window of Noise Suppression"
 [Window: Noise Gate]: ./image/en/ng-window.png "window of Noise Gate"
