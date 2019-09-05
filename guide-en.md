@@ -179,7 +179,7 @@ But there's more! You can set it so you can change the threshold directly on the
 
 Usually, Limiter should be the last filter for a channel - it puts the final nail to the ceiling of the peak! And volume control shown on the Peak Meter controls the volume of the final signal that comes from the last filter for the channel. If the volume control is set at 0.0 dB, the final signal will be kept as it is.
 
-<u>If you set the Limiter threshold to 0dB, the threshold is kind of sync to the volume control.</u> A volume control will cut the exceeded signal, so when a signal goes louder than that it doesn't sound nice. But if it's also the threshold of the Limiter, the signal will be squeezed in rather a smooth manner at that point, making it much better to listen.
+<u>If you set the Limiter threshold to 0dB, the threshold becomes in sync with the volume control.</u> Originally, a volume control will cut the exceeded signal, so the sound got squashed. But if it's also the threshold of the Limiter, the signal will be squeezed in rather a smooth manner at that point, making it much better to listen.
 
 [OBS Peak Meter]: ./image/peak-meter.png
 [Reading the Volume Meter]: https://github.com/obsproject/obs-studio/wiki/Understanding-The-Mixer#reading-the-volume-meter
