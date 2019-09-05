@@ -135,13 +135,12 @@ There's a setting for Attack/Release.
 Here's an *example case* of setting up the compressor to make your voice constant and loud enough. The specific numbers can be various due to many reasons: how close your mouth is to your mic, how sensitive your mic is, how loud your desktop audio usually goes, and many others...
 
 When you tried talking in various ways, sometimes the peak goes between -5 and -15, -15 and -25, and -30 and -35.
-You want to make your voice range to be between -10 and -20.
 
-![Compressor Explanationary Picture][Compressor Steps]
-
-Your original voice range could be therefore between -5 and -35. You don't need to be precise when defining the range. Just check the biggest and smallest peak when you were talking.
+Your original voice range could be therefore between -5 and -35. You don't need to be precise when defining the range. Just check the highest and lowest peak when you were talking.
 
 Let's say game audio is usually going around -20 and -30. Most of the cases you want your voice to be louder than game audio and other desktop sounds, so let's set the target range to -10 and -20.
+
+![Compressor Explanationary Picture][Compressor Steps]
 
 First, you want to squeeze the signals. Original range is 30dB wide (-5 ~ -35), and target range is 10dB wide (-10 ~ -20). Squeeze the original range by Ratio of 3:1 so it becomes 10dB wide.
 
