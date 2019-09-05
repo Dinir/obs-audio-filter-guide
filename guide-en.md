@@ -9,7 +9,7 @@ Before going into the explanation, I want to tell you that all these filters can
 # Table of Contents
 
 - A quick look at [the Peak Meter and the Filter Window](#about-the-interface).
-- Is there static noise around you?  
+- Is there a background noise around you?  
   Try [Noise Suppression](#noise-suppression) and [Noise Gate](#noise-gate).
 - Your voice is too quiet even at maximum volume?  
   Try [Gain](#gain).
@@ -38,7 +38,7 @@ Detailed info about how to read this meter is available at [the official wiki][R
 
 When you access the filters from the peak meter, you will see all the filters set for the corresponding channel.
 
-1. Eyes show if filters are active. If you feel like you have to keep a filter while not going to use it right now, you can click the eye to toggle the filter to be on and off, instead of just deleting it.
+1. Eyes show if filters are active. If you feel like you have to keep a filter while not going to use it right now, you can click the eye to toggle the filter to be on and off, instead of just deleting it or altering the value of the filter.
 2. These icons will let you add, remove, and adjust the order of the filters. Signals of an audio channel will go through them from top to bottom.
 
 Remember that **only the first filter in the order will receive the raw audio input**. All the other filters will receive the altered signal from a filter right above it.
