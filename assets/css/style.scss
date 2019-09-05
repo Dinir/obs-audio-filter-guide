@@ -9,7 +9,6 @@ body,
 .markdown-body table tr {
   background: hsl(0, 0%, 90%);
 }
-
 .markdown-body {
   blockquote {
     color: hsl(212, 8%, 35%);
@@ -28,27 +27,25 @@ body,
 // these are personal.
 
 .markdown-body {
-  // darker background, some vertical padding for the darker background
   blockquote {
+    // darker background, some vertical padding for the darker background
     padding: 0.5em 1em;
     background-color: hsla(0, 0%, 0%, 0.03);
   }
-  // just horizontally aligning to center
   img {
+    // just horizontally aligning to center
     display: block;
     margin-right: auto;
     margin-left: auto;
+    // remove default white background for the elements
+    background-color: transparent;
   }
 }
-
-// I don't need 'view on github' button for this Pages.
-
 header ul {
+  // I don't need 'view on github' button for this Pages.
   display: none;
 }
-
-// don't tell anyone but I feel dizzy when seeing a large paragraph in italic.
-
 blockquote {
+  // don't tell anyone but I feel dizzy when seeing a large paragraph in italic.
   font-style: normal;
 }
