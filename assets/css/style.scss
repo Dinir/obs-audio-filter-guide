@@ -3,6 +3,28 @@
 
 @import "{{ site.theme }}";
 
+// I am gonna reduce all the light of colors by 10%.
+
+body,
+.markdown-body table tr {
+  background: hsl(0, 0%, 90%);
+}
+
+.markdown-body {
+  blockquote {
+    color: hsl(212, 8%, 35%);
+    border-left-color: hsl(210, 10%, 79%);
+  }
+  table {
+    tr {
+      border-top-color: hsl(213, 11%, 70%);
+      th, td {
+        border-color: hsl(210, 10%, 79%);
+      }
+    }
+  }
+}
+
 header ul {
   display: none;
 }
