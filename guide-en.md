@@ -86,12 +86,14 @@ When you applied a filter and as a result the channel signal became quieter, you
 | Function | Turns off the channel when it goes silent. |
 
 > **How to set up**  
-> 1. Set two thresholds all the way to the left.  
-> Slowly drag Close Threshold to the right until you see no peak meter movement. It should show a movement when you talk.
-> 2. Try talking to see where the peak stays after you finished talking.  
-> Move Open Threshold to a value around the peak value you saw.  
-> Try talking to see if the peak meter goes silent after talking.  
-> Keep adjusting the threshold until you find a value where the channel effectively goes silent after your voice.
+> 1. Set two thresholds all the way to the left, and see where the peak stays.
+> 2. See what is the highest peak when you're not saying anything, and move Close Threshold to go above the value.
+> 3. Try talking and see where the peak meter passes when you are about to make a sound.
+> 4. Move Open Threshold to the value.  
+  If the thresholds are set right, the peak meter should move when you speak, and completely go away when you don't.  
+  Close Threshold should be lower than Open Threshold, otherwise the peak can stay above the Open one and below Close one.
+> 5. Try to lower the Open Threshold a bit so when you start talking the peak doesn't barely go over the Open Threshold.  
+  Otherwise, your voice might be getting cut at the first syllable. Try making offline records of your voice and listen to it to check.
 
 Basically what it does is muting and unmuting at set conditions.
 
