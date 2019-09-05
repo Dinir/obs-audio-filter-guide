@@ -1,9 +1,3 @@
-<style>
-nav {
-  display: none;
-}
-</style>
-
 This is a guide on how to use OBS audio filters.  
 Look at the full guide, or a part you are interested.
 
