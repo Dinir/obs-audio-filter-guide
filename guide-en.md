@@ -2,7 +2,7 @@ So you decided to use your mic on your stream! Which would be very helpful towar
 
 But one thing, your viewers are supposed to hear your voice and **all kind of other noises**, and it's hard to stay in your stream if the noises are too interrupting to watch your stream.
 
-There are 4 audio filters I will explain, that will drastically improve your overall audio, and if you are done setting your basic configuration for them, it will be easier to make changes when someone tells you there's an issue with your audio.
+There are 5 audio filters I will explain, that will drastically improve your overall audio, and if you are done setting your basic configuration for them, it will be easier to make changes when someone tells you there's an issue with your audio.
 
 Before going into the explanation, I want to tell you that all these filters can also be applied to any of your audio sources, including Desktop Audio. And the filters can improve these audio sources in the same way they can improve your voice.
 
@@ -50,7 +50,7 @@ Remember that **only the first filter in the order will receive the raw audio in
 ![Noise Suppression window][Window: Noise Suppression]
 
 | Problem  | There's background noise. |
-| -------- | ---------------- |
+| -------- | :--------------- |
 | Function | Reduce the audio by the level. |
 
 > **How to set up** Keep yourself silent, and start from 0dB and slowly decrease the slider until you see no peak meter movement. Try talking to see if it keeps your voice.
@@ -66,7 +66,7 @@ Since it will reduce the volume of the channel, it's good to set up a Gain filte
 ![Gain Window][Window: Gain]
 
 | Problem  | Voice is too quiet but it can't be increased anymore. |
-| -------- | ---------------- |
+| -------- | :--------------- |
 | Function | Boost the audio by the level. |
 
 > **How to set up** Set the slider to the value you want to add to the signal.
@@ -80,7 +80,7 @@ When you applied a filter and as a result the channel signal became quieter, you
 ![Noise Gate Window][Window: Noise Gate]
 
 | Problem  | I want the mic to be completely silent when I am not talking. <br>Noise Suppression is not enough to cut out the background noise. |
-| -------- | ---------------- |
+| -------- | :--------------- |
 | Function | Turns off the channel when it goes silent. |
 
 > **How to set up**  
@@ -109,7 +109,7 @@ You might not need to touch Attack/Hold/Release Time, but if you hear your first
 ![Compressor Window][Window: Compressor]
 
 | Problem  | Voice is sometimes too loud, sometimes too quiet. |
-| -------- | ---------------- |
+| -------- | :--------------- |
 | Function | Compress loud signals to make the overall signal constant. |
 
 > **How to set up**
@@ -162,7 +162,7 @@ In that case, we could use Limiter.
 ![Limiter Window][Window: Limiter]
 
 | Problem  | My voice is squashed at the max peak. |
-| -------- | ---------------- |
+| -------- | :--------------- |
 | Function | Squeeze any signal under the level. |
 
 > **How to set up** Set the threshold to a value you hope your voice to never go louder.
