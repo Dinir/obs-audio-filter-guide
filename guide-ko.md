@@ -1,7 +1,3 @@
----
-description: OBS에서 오디오 필터를 사용하는 방법
----
-
 [<< 인덱스](./)  
 [>> English](./guide-en.html)
 
