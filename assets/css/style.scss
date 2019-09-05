@@ -25,11 +25,20 @@ body,
   }
 }
 
-// this is personal. add darker background for blockquote. also some padding.
+// these are personal.
 
-.markdown-body blockquote {
-  padding: 0.5em 1em;
-  background-color: hsla(0, 0%, 0%, 0.03);
+.markdown-body {
+  // darker background, some vertical padding for the darker background
+  blockquote {
+    padding: 0.5em 1em;
+    background-color: hsla(0, 0%, 0%, 0.03);
+  }
+  // just horizontally aligning to center
+  img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 // I don't need 'view on github' button for this Pages.
