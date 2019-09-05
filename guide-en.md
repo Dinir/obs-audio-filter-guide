@@ -1,3 +1,5 @@
+[<< Index](./)
+
 So you decided to use your mic on your stream! Which would be very helpful toward making the stream more interactive, as generally it's more fun and joyful watching someone playing games when you can hear what they think via their voice!
 
 But one thing, your viewers are supposed to hear your voice and **all kind of other noises**, and it's hard to stay in your stream if the noises are too interrupting to watch your stream.

@@ -1,0 +1,12 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+#banner .button.fork {
+  display: none;
+}
+
+blockquote {
+  font-style: normal;
+}

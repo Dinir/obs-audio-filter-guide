@@ -1,3 +1,9 @@
+<style>
+nav {
+  display: none;
+}
+</style>
+
 This is a guide on how to use OBS audio filters.  
 Look at the full guide, or a part you are interested.
 
@@ -6,9 +12,7 @@ OBS 오디오 필터의 설정법을 알려주는 가이드입니다.
 
 - - -
 
-# English
-
-[Full Guide](./guide-en.html)
+# [English](./guide-ko.html)
 
 - A quick look at [the Peak Meter and the Filter Window](./guide-en.html#about-the-interface).
 - Is there a background noise around you?  
@@ -20,9 +24,7 @@ OBS 오디오 필터의 설정법을 알려주는 가이드입니다.
 - Worried about your voice maxing out and distorting when you scream?  
   Try [Limiter](./guide-en.html#limiter).
 
-# 한국어
-
-[전체 가이드](./guide-ko.html)
+# [한국어](./guide-ko.html)
 
 - [피크 미터와 필터 창](./guide-ko.html#인터페이스) 살펴보기
 - 지속해서 들리는 잡음이 있나요?  
