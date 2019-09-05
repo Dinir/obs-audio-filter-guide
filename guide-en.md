@@ -1,4 +1,3 @@
-[<< Index](./)  
 [>> 한국어](./guide-ko.html)
 
 So you decided to use your mic on your stream! Which would be very helpful toward making the stream more interactive, as generally it's more fun and joyful watching someone playing games when you can hear what they think via their voice!
