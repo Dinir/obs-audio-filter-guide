@@ -6,63 +6,67 @@
 
 설명에 들어가기 전에, 아래에 소개할 필터들이 데스크탑 오디오에도 적용될 수 있다는 것을 기억해주셨으면 좋겠네요. 목소리에 적용되었을 때와 마찬가지로 다른 오디오 소스의 음질 향상에도 도움이 될 것입니다.
 
-# Table of Contents
+# 목차
 
-- Is there static noise around you?  
-  Try [Noise Suppression](#noise-suppression) and [Noise Gate](#noise-gate).
-- Your voice is sometimes too loud, and sometimes too quite?  
-  Try [Compressor](#compressor) and [Gain](#gain).
-- Worried about your voice maxing out and distort when you scream?  
-  Try [Limiter](#limiter).
+- [피크 미터와 필터 창](#인터페이스) 살펴보기
+- 지속적으로 들리는 잡음이 있나요?  
+  [소음 억제](#소음-억제)와 [노이즈 게이트](#노이즈-게이트)를 사용해보세요.
+- 최대 볼륨에서도 목소리가 작게 들리나요?  
+  [증폭](#증폭)을 사용해보세요.
+- 목소리 크기가 너무 들쑥날쑥한가요?  
+  [압축방식](#압축방식)을 사용해보세요.
+- 소리지를 때 목소리가 뭉개지는 게 걱정이신가요?  
+  [음성 제한](#음성-제한)을 사용해보세요.
 
-# Noise Suppression
+# 인터페이스
 
-![Noise Suppression window][Window: Noise Suppression]
+## 피크 미터 <sub>Peak Meter</sub>
 
-| Problem | There's a background noise. |
-| ------- | --------------------------- |
-| Function | Turns off the audio when signal is quiter than the threshold. |
+![피크 미터][OBS Peak Meter]
 
-# Noise Gate
+여기에서는 각 채널들이 받는 신호의 피크를 실시간으로 보여줍니다. 활성화된 필터 전부가 이 미터들에 영향을 줍니다. 저는 수직 형태로 설정해 놓았지만, 기본 설정에서는 수평 형태로 나타납니다. 컴퓨터에 연결된 오디오 장치들이 있다면 채널이 두 개보다 더 나타날 수 있습니다!
 
-![Noise Gate Window][Window: Noise Gate]
+우클릭을 하거나 톱니바퀴 아이콘을 클릭해서 필터와 다른 옵션에 접근할 수 있습니다.
 
-| Problem  |   |
-| -------- | - |
-| Function |   |
+미터에 대한 자세한 설명은 [공식 위키 (영어)][Reading the Volume Meter]에서 확인하실 수 있습니다.
 
-# Compressor
+## 필터 창
 
-![Compressor Window][Window: Compressor]
+![필터 창][OBS Filter Window]
 
-| Problem  |   |
-| -------- | - |
-| Function |   |
+피크 미터에서 필터를 선택하면 해당 채널에 적용된 모든 필터를 보실 수 있습니다.
 
-# Gain
+1. 눈은 활성화된 필터를 나타냅니다. 지금 당장은 쓰지 않지만 놔두고 싶은 필터가 있다면, 필터를 지우거나 필터의 설정을 바로 바꿔버리는 대신 눈 아이콘을 눌러서 끄고 켤 수 있습니다.
+2. 여기 아이콘을 통해 필터를 추가, 제거하고 순서를 바꿀 수 있습니다. 오디오 채널의 신호는 적용된 모든 필터를 위에서부터 순서대로 지나갑니다.
 
-![Gain Window][Window: Gain]
+# 소음-억제
 
-| Problem  |   |
-| -------- | - |
-| Function |   |
 
-# Limiter
 
-![Limiter Window][Window: Limiter]
+# 노이즈-게이트
 
-| Problem  |   |
-| -------- | - |
-| Function |   |
 
-# Troubleshooting
 
-Okay, so you're all set up with audio configuration! It should be good for now, but as time goes there should be always someone who's gonna point out an issue with your audio setting. It could be a viewer, or you yourself!
+# 증폭
 
-I'll list some case
+
+
+# 압축방식
+
+
+
+# 음성-제한
+
+
+
+[OBS Peak Meter]: ./image/peak-meter.png
+[Reading the Volume Meter]: https://github.com/obsproject/obs-studio/wiki/Understanding-The-Mixer#reading-the-volume-meter
+[OBS Filter Window]: ./image/filter-window.png
 
 [Window: Noise Suppression]: ./image/ko/ns-window.png "window of Noise Suppression"
 [Window: Noise Gate]: ./image/ko/ng-window.png "window of Noise Gate"
 [Window: Compressor]: ./image/ko/c-window.png "window of Compressor"
+[Compressor Steps]: ./image/compressor-steps.png "Step by step process to set up Compressor"
+[Compressor Input-Output Graph]: ./image/compressor-io-graph.png "Compressor Concept in an Input-Output Graph"
 [Window: Gain]: ./image/ko/g-window.png "window of Gain"
 [Window: Limiter]: ./image/ko/l-window.png "window of Limiter"
