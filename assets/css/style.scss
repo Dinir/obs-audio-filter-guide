@@ -10,6 +10,9 @@ body,
   background: hsl(0, 0%, 90%);
 }
 .markdown-body {
+  hr {
+    background-color: hsl(214, 13%, 80%);
+  }
   blockquote {
     color: hsl(212, 8%, 35%);
     border-left-color: hsl(210, 10%, 79%);
