@@ -25,9 +25,20 @@ body,
   }
 }
 
+// this is personal. add darker background for blockquote. also some padding.
+
+.markdown-body blockquote {
+  padding: 0.5em 1em;
+  background-color: hsla(0, 0%, 0%, 0.03);
+}
+
+// I don't need 'view on github' button for this Pages.
+
 header ul {
   display: none;
 }
+
+// don't tell anyone but I feel dizzy when seeing a large paragraph in italic.
 
 blockquote {
   font-style: normal;
