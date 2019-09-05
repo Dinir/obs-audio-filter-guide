@@ -12,7 +12,7 @@ OBS 오디오 필터의 설정법을 알려주는 가이드입니다.
 
 - - -
 
-# [English](./guide-ko.html)
+# [English](./guide-en.html)
 
 - A quick look at [the Peak Meter and the Filter Window](./guide-en.html#about-the-interface).
 - Is there a background noise around you?  
