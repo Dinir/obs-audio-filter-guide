@@ -41,7 +41,7 @@
 
 - - -
 
-# 소음-억제
+# 소음 억제
 
 ![소음 억제 창][Window: Noise Suppression]
 
@@ -71,7 +71,7 @@
 
 필터를 적용해서 채널 신호가 작아졌을 때, 이 필터를 적용해서 다시 키워줄 수 있습니다.
 
-# 노이즈-게이트
+# 노이즈 게이트
 
 ![노이즈 게이트 창][Window: Noise Gate]
 
@@ -102,15 +102,58 @@
 
 # 압축방식
 
+![압축방식 창][Window: Compressor]
 
-
-| 문제 |  |
+| 문제 | 목소리 크기가 너무 들쑥날쑥해요. |
 | ---- | ---------------- |
-| 기능 |  |
+| 기능 | 신호의 큰 부분을 압축하여 전체적인 신호를 균일하게 만듭니다. |
 
-> **설정하는 방법** 
+> **설정하는 방법**  
+> 1. 말소리의 범위를 확인해보세요. 여러가지 방법으로 말을 해보면서 피크 미터가 머무르는 지점들을 찾아보세요.
+> 2. 원하는 말소리의 범위를 정하세요.
+> 3. 기존 범위를 압축해서 원하는 범위와 같은 길이를 갖도록 만드세요.
+> 4. 압축된 범위를 원하는 범위가 될 때까지 끌어올리세요.
 
-# 음성-제한
+여기에 소개할 필터 중 제일 복잡한 필터입니다. 하지만 충분히 오디오 테스트를 해보고 현재 범위와 목표 범위를 정하면, 압축 방식 필터를 적용하는 방법이 명확해질 것입니다.
+
+목표 범위를 정한 다음에는 먼저 신호를 *압축* 하고, 그 다음 압축해서 잃은 볼륨을 메꿔줄 것입니다.
+
+- 어떤 신호든 **임계값**을 초과하면 정해진 **비율**만큼 압축됩니다.
+- 압축된 신호는 **출력 증폭**만큼 다시 키울 수 있습니다. 이 증폭은 항상 똑같은 값으로 신호에 더해집니다.
+
+여기에도 준비 시간 설정이 있습니다.
+
+- 신호가 임계값을 지나면, **신호 감지 후 반응까지 걸리는 시간**에 걸쳐 서서히 압축이 시작되어 최종적으로는 설정된 비율만큼 압축이 됩니다.
+- 신호가 임계값 아래로 내려가면, 압축이 **신호 세기가 감퇴 이후 증폭이 회복하는 시간**에 걸쳐 서서히 풀립니다.
+
+## 설정 예시
+
+목소리를 균일하게 크게 만들어주는 압축 방식 필터를 설정하는 *예시*입니다. 구체적인 숫자는 여러가지 요인에 따라 달라질 수 있습니다. 이를테면 마이크와 입 사이의 거리, 마이크의 민감한 정도, 데스크탑 오디오의 평균 크기 등등이 있습니다.
+
+여러가지 방법으로 말을 해보니, 피크는 때로 -5 ~ -15 에 머물기도 하고, 때로는 -15 ~ -25, -30 ~ -35 에 머물기도 합니다.
+
+오디오 테스트를 해본 결과 목소리의 범위는 -5 ~ -35 라고 결정했습니다. 이 범위를 너무 정확하게 잴 필요는 없습니다. 말하고 있을 때 피크가 머무르는 가장 높은 위치와 낮은 위치를 확인하세요.
+
+게임 오디오가 보통 -20 ~ -30 에 머무른다고 해봅시다. 대부분의 경우 목소리는 게임 오디오나 다른 데스크탑 사운드보다 큰 게 좋으니, 목표 범위는 -10 ~ -20 으로 정합니다.
+
+![컴프레서 설명 그림][Compressor Steps]
+
+우선 신호를 압축해야 합니다. 기존 범위는 30dB 너비(-5 ~ -35)이고, 목표 범위는 10dB 너비(-10 ~ -20)입니다. 기존 범위를 3:1의 비율로 줄여서 10dB 너비가 되도록 합시다.
+
+이렇게 하면 전체적인 목소리가 훨씬 작아질 겁니다. 바뀐 범위는 이제 -25 ~ -35 가 되겠네요. 작아진 목소리를 다시 키워줘야 하므로, 출력 증폭을 15dB 만큼 더합니다. 그럼 범위는 이제 -10 ~ -20 이 됩니다. 처음 정한 목표 범위가 되었죠.
+
+이제 대부분의 경우 마이크에 대고 말할 때 당신의 목소리는 -10 ~ -20 사이에 머무를 것입니다. 하지만 마이크에 대고 소리를 지르는 경우는 -10 을 훨씬 뛰어넘겠죠. 압축 방식 필터는 볼륨을 엄격하게 제한해주는 필터가 아니라서 그렇습니다.
+
+그런 제한이 필요한 경우라면, 음성 제한 필터를 쓸 수 있습니다.
+
+> 참고로 압축 방식 필터는 데스크탑 오디오나 다른 캡쳐 장치의 출력에도 적용해서 평균 크기를 정해주는 데에 사용할 수 있습니다!  
+> 데스크탑 오디오에 적용할 때는 설정하는 방법이 조금 다릅니다. 임계값을 '보통은 이 정도 크기를 넘진 않았으면 좋겠어' 같은 느낌으로 설정하고, 비율을 조절해서 최고 크기로 기대되는 볼륨을 조절하세요.
+>
+> ![데스크탑 오디오에 압축방식 적용하기][Compressor Input-Output Graph]
+>
+> 데스크탑 오디오에 더 엄격한 제한을 주고 싶을 경우엔 음성 제한 필터가 도움이 될 수 있습니다.
+
+# 음성 제한
 
 
 
@@ -124,10 +167,10 @@
 [Reading the Volume Meter]: https://github.com/obsproject/obs-studio/wiki/Understanding-The-Mixer#reading-the-volume-meter
 [OBS Filter Window]: ./image/filter-window.png
 
-[Window: Noise Suppression]: ./image/ko/ns-window.png "window of Noise Suppression"
-[Window: Noise Gate]: ./image/ko/ng-window.png "window of Noise Gate"
-[Window: Compressor]: ./image/ko/c-window.png "window of Compressor"
-[Compressor Steps]: ./image/compressor-steps.png "Step by step process to set up Compressor"
+[Window: Noise Suppression]: ./image/ko/ns-window.png "소음 억제 창"
+[Window: Noise Gate]: ./image/ko/ng-window.png "노이즈 게이트 창"
+[Window: Compressor]: ./image/ko/c-window.png "압축방식 창"
+[Compressor Steps]: ./image/compressor-steps.png "범위를 정하고, 목표를 정한다음, 압축하고, 끌어올리기"
 [Compressor Input-Output Graph]: ./image/compressor-io-graph.png "Compressor Concept in an Input-Output Graph"
-[Window: Gain]: ./image/ko/g-window.png "window of Gain"
-[Window: Limiter]: ./image/ko/l-window.png "window of Limiter"
+[Window: Gain]: ./image/ko/g-window.png "증폭 창"
+[Window: Limiter]: ./image/ko/l-window.png "음성 제한 창"
