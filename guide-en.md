@@ -1,24 +1,24 @@
 [>> 한국어](./guide-ko.html)
 
-So you decided to use your mic on your stream! Which would be very helpful toward making the stream more interactive, as generally it's more fun and joyful watching someone playing games when you can hear what they think via their voice!
+So you've decided to use your mic on your stream! Which would be very helpful toward making the stream more interactive, as generally it's more fun and joyful watching someone playing games when you can hear what they think via their voice!
 
-But one thing, your viewers are supposed to hear your voice and **all kind of other noises**, and it's hard to stay in your stream if the noises are too interrupting to watch your stream.
+But your viewers are supposed to hear your voice and **all kind of other noises**, and it's hard to stay in your stream if the noises are too interrupting to watch your stream.
 
-There are 5 audio filters I will explain, that will drastically improve your overall audio, and if you are done setting your basic configuration for them, it will be easier to make changes when someone tells you there's an issue with your audio.
+I'm going to explain five audio filters, that will drastically improve your overall audio, and once you're done setting them up, it will be easier to make changes when someone tells you there's an issue with your audio.
 
-Before going into the explanation, I want to tell you that all these filters can also be applied to any of your audio sources, including Desktop Audio. And the filters can improve these audio sources in the same way they can improve your voice.
+Before going into detail, I want to tell you that all these filters can be applied to **any** of your audio sources, not just your microphone. You can use these filters to improve all of your audio sources in the same way we'll be optimizing your microphone's output.
 
 # Table of Contents
 
 - A quick look at [the Peak Meter and the Filter Window](#about-the-interface).
-- Is there a background noise around you?  
-  Try [Noise Suppression](#noise-suppression) and [Noise Gate](#noise-gate).
-- Your voice is too quiet even at maximum volume?  
-  Try [Gain](#gain).
-- Your voice is sometimes too loud, and sometimes too quiet?  
-  Try [Compressor](#compressor).
-- Worried about your voice maxing out and distorting when you scream?  
-  Try [Limiter](#limiter).
+- Are you streaming in an environment with a lot of ambient noise?  
+  Try the [Noise Suppression](#noise-suppression) and the [Noise Gate](#noise-gate) filters.
+- Is your voice too quiet, even at maximum volume?  
+  Try the [Gain](#gain) filter.
+- Is your voice too loud some of the time and too quiet at other times?  
+  Try the [Compressor](#compressor) filter.
+- Are you worried about your voice distorting or peaking when you get too excited?  
+  Try the [Limiter](#limiter) filter.
 
 - - -
 
@@ -28,7 +28,7 @@ Before going into the explanation, I want to tell you that all these filters can
 
 ![Peak Meter][OBS Peak Meter]
 
-Here each channel will show the peak of the signal they receive in real-time. All active filters affect these meters. Here I set it to be vertical, but the default view is horizontal. There could be more than just two channels if you have more audio devices connected to the computer!
+Here each audio channel will display the peak of its signal in real-time. All active filters affect these meters. Here I've set them to be vertical, but by default, they'll be displayed horizontally. There could be more than just two channels if you have more audio devices connected to the computer!
 
 Right-click or click the gear icon to access filters and other options.
 
@@ -38,12 +38,12 @@ Detailed info about how to read this meter is available at [the official wiki][R
 
 ![Filter Window][OBS Filter Window]
 
-When you access the filters from the peak meter, you will see all the filters set for the corresponding channel.
+To see all filters applied to a given audio channel, click the corresponding gear icon in the peak meter.
 
-1. Eyes show if filters are active. If you feel like you have to keep a filter while not going to use it right now, you can click the eye to toggle the filter to be on and off, instead of just deleting it or altering the value of the filter.
-2. These icons will let you add, remove, and adjust the order of the filters. Signals of an audio channel will go through them from top to bottom.
+1. The eye icon indicates whether a given filter is active. If you'd like to temporarily disable a filter without necessarily removing it forever, you can click the eye to toggle the filter on and off instead of just deleting it or altering its value.
+2. These icons will let you add new filters, remove filters, and adjust their order. OBS Studio will apply these audio filters to the channel's signal in order from top to bottom.
 
-Remember that **only the first filter in the order will receive the raw audio input**. All the other filters will receive the altered signal from a filter right above it.
+It's worth noting that **only the first filter in the order will receive the raw audio input**. All the other filters will receive the audio signal *after* it's been processed by the filter immediately above.
 
 - - -
 
@@ -51,61 +51,57 @@ Remember that **only the first filter in the order will receive the raw audio in
 
 ![Noise Suppression window][Window: Noise Suppression]
 
-| Problem  | There's background noise. |
+| Problem  | My microphone is picking up too much ambient noise. |
 | -------- | :--------------- |
 | Function | Reduce the audio by the level. |
 
-> **How to set up** Keep yourself silent, and start from 0dB and slowly decrease the slider until you see no peak meter movement. Try talking to see if it keeps your voice.
+> **How to set up** Keep yourself silent, start from 0dB and slowly decrease the slider until you see no peak meter movement. Try talking to make sure the microphone is still picking up your voice.
 
-This filter has a very simple interface, one slider named 'Suppression Level' and that's it! It will reduce the associated audio by the amount set by the slider.
+This filter has a very simple interface. There's one slider named 'Suppression Level' and that's it! It will reduce the associated audio by the amount set by the slider.
 
-Noise Suppression is good at cutting mild noises like an electric fan in your room.
+Noise Suppression is good at cutting quiet noises like an electric fan in your room.
 
-Since it will reduce the volume of the channel, it's good to set up a Gain filter to compensate for the volume loss.
+Since this will reduce the volume of the channel, it's agood idea to set up a Gain filter to compensate.
 
 # Gain
 
 ![Gain Window][Window: Gain]
 
-| Problem  | Voice is too quiet but it can't be increased anymore. |
+| Problem  | I have maxed out the microphone's volume slider, but my voice is still too quiet. |
 | -------- | :--------------- |
-| Function | Boost the audio by the level. |
+| Function | Boosts the channel's volume. |
 
-> **How to set up** Set the slider to the value you want to add to the signal.
+> **How to set up** Use the slider to specify how much you'd like to boost the channel's volume.
 
-This filter has a very simple interface too, and this time the change is instantly visible: Let's say you set the slider to 5dB, you'll see the peak meter increase by 5dB for the same signal.
+This filter has a very simple interface too, and this time the change is instantly visible; the changes you make should be displayed on the peak meter in real time.
 
-When you applied a filter and as a result the channel signal became quieter, you can apply this filter to compensate for the loss.
+Many filters will reduce the overall volume of the audio channel; the gain filter allows you to compensate for this.
 
 # Noise Gate
 
 ![Noise Gate Window][Window: Noise Gate]
 
-| Problem  | I want the mic to be completely silent when I am not talking. <br>Noise Suppression is not enough to cut out the background noise. |
+| Problem  | I want the mic to be completely silent when I am not talking. <br>Noise Suppression filter isn't cutting out all of the background noise. |
 | -------- | :--------------- |
-| Function | Turns off the channel when it goes silent. |
+| Function | Mutes an audio channel until its volume surpasses a given threshold. |
 
 > **How to set up**  
-> 1. Set two thresholds all the way to the left, and see where the peak stays.
-> 2. See what is the highest peak when you're not saying anything, and move Close Threshold to go above the value.
-> 3. Try talking and see where the peak meter passes when you are about to make a sound.
-> 4. Move Open Threshold to the value.  
-  If the thresholds are set right, the peak meter should move when you speak, and completely go away when you don't.  
-  Close Threshold should be lower than Open Threshold, otherwise the peak can stay above the Open one and below Close one.
-> 5. Try to lower the Open Threshold a bit so when you start talking the peak doesn't barely go over the Open Threshold.  
-  Otherwise, your voice might be getting cut at the first syllable. Try making offline records of your voice and listen to it to check.
+> 1. Set the two thresholds all the way to the left, and use the peak meter to monitor the ambient noise your microphone is picking up.
+> 2. Move the Close Threshold slider to the right, just past the volume level of your room's ambient noise. Be sure you aren't making any extra noise yourself.
+> 3. Speak into your microphone and keep an eye on the peak meter to determine an appropriate position for the Open Threshold slider.  
+  It should be to the right of Close Threshold; otherwise, your noise gate may get stuck open.
 
-Basically what it does is muting and unmuting at set conditions.
+The Noise Gate filter's basic function is to mute or unmute your microphone based on two parameters, the open threshold and the close threshold.
 
-- A signal goes quieter than **Close Threshold**, the channel is muted.
-- A signal goes louder than **Open Threshold**, the channel is unmuted.
+- If the signal is quieter than the **Close Threshold**, the channel is muted.
+- If the signal is louder than the **Open Threshold**, the channel is unmuted.
 
-It comes handy when you want to ensure complete silence on the mic channel or more strong control on the background noise.
+This comes in handy when you want to ensure complete silence on the mic channel or more strong control on the background noise.
 
-You might not need to touch Attack/Hold/Release Time, but if you hear your first syllable getting cut when you start talking, then you would want to try setting at least Attack Time.
+You might not need to touch Attack/Hold/Release Time, but if the noise gate seems to be eating the beginnings of your sentences, then you may want to adjust the Attack Time.
 
 - When the signal goes over Open Threshold, the channel will be gradually opened over **Attack Time**, like a fade-in.
-- Even the signal quickly goes back under Close Threshold, the channel will be kept open at least for **Hold Time**.
+- **Hold Time** determines how long the noise gate waits to close after the volume level drops beneath the Close Threshold.
 - When the signal goes under Close Threshold and after Hold Time is passed, the channel will be gradually closed over **Release Time**, like a fade-out.
 
 # Compressor
