@@ -187,6 +187,10 @@ Usually, Limiter should be the last filter for a channel - it puts the final nai
 
 <u>If you set the Limiter threshold to 0dB, the threshold becomes in sync with the volume control.</u> Originally, a volume control will cut the exceeded signal, so the sound got squashed. But if it's also the threshold of the Limiter, the signal will be squeezed in rather a smooth manner at that point, making it much better to listen.
 
+- - -
+
+And this is all the explanation for the five filters in OBS. It's not a simple task to configure some or all of these filters for your environment. It's not necessarily hard, but you *will* need to spend some time to actually test the audio - tweak a bit, make a short record, listen to it, and rinse and repeat until you feel everything is alright.
+
 [OBS Peak Meter]: ./image/peak-meter.png
 [Reading the Volume Meter]: https://github.com/obsproject/obs-studio/wiki/Understanding-The-Mixer#reading-the-volume-meter
 [OBS Filter Window]: ./image/filter-window.png
