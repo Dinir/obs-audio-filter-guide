@@ -104,7 +104,7 @@ This filter's basic function is to mute or unmute your microphone based on two p
 
 This comes in handy when you want to ensure complete silence on the mic channel or more strong control on the background noise.
 
-You might not need to touch Attack/Hold/Release Time, but if the noise gate seems to be eating the beginnings of your sentences, then you may want to adjust the Attack Time.
+You might not need to touch Attack/Hold/Release Time, but if the noise gate seems to be eating the beginnings of your sentences, then you may want to lower the Open Threshold or shorten the Attack Time.
 
 - When the signal goes over Open Threshold, the channel will be gradually opened over **Attack Time**, like a fade-in.
 - **Hold Time** determines how long the noise gate waits to close after the volume level drops beneath the Close Threshold.
