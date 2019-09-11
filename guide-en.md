@@ -91,7 +91,13 @@ Many filters will reduce the overall volume of the audio channel; the gain filte
 > 3. Speak into your microphone and keep an eye on the peak meter to determine an appropriate position for the Open Threshold slider.  
   It should be to the right of Close Threshold; otherwise, your noise gate may get stuck open.
 
-The Noise Gate filter's basic function is to mute or unmute your microphone based on two parameters, the open threshold and the close threshold.
+The Noise Gate filter is intuitive to configure, but not easy to explain in a written form. Here's a brief drawing to help you understand how it works.
+
+![Noise Gate Explanation]
+
+Moving the threshold sliders all the way to the left means the filter will open the channel for signal of any size and close it when it goes into an absolute silent, which won't likely happen in a general environment. It's effectively turning off the filter, so you can start setting from there.
+
+This filter's basic function is to mute or unmute your microphone based on two parameters, the open threshold and the close threshold.
 
 - If the signal is quieter than the **Close Threshold**, the channel is muted.
 - If the signal is louder than the **Open Threshold**, the channel is unmuted.
@@ -187,8 +193,9 @@ Usually, Limiter should be the last filter for a channel - it puts the final nai
 
 [Window: Noise Suppression]: ./image/en/ns-window.png "window of Noise Suppression"
 [Window: Noise Gate]: ./image/en/ng-window.png "window of Noise Gate"
+[Noise Gate Explanation]: ./image/noise-gate-explanation.png "Noise Gate concept"
 [Window: Compressor]: ./image/en/c-window.png "window of Compressor"
 [Compressor Steps]: ./image/compressor-steps.png "Step by step process to set up Compressor"
-[Compressor Input-Output Graph]: ./image/compressor-io-graph.png "Compressor Concept in an Input-Output Graph"
+[Compressor Input-Output Graph]: ./image/compressor-io-graph.png "Compressor concept in an Input-Output Graph"
 [Window: Gain]: ./image/en/g-window.png "window of Gain"
 [Window: Limiter]: ./image/en/l-window.png "window of Limiter"
