@@ -195,6 +195,10 @@
 
 <u>음성 제한 필터의 임계값을 0dB로 설정하면, 이 값은 볼륨 컨트롤과 동기화가 됩니다.</u> 기존의 볼륨 컨트롤은 설정값을 초과하는 신호를 잘라버리므로, 소리가 뭉개집니다. 하지만 이 설정값이 음성 제한 필터의 임계값인 경우에는 더 부드러운 방식으로 신호가 압축되므로 듣기에 더 좋은 소리가 나옵니다.
 
+- - -
+
+이로써 OBS의 다섯 가지 필터에 대해 모두 다루어 보았습니다. 스트림 환경에 맞게 이 필터를 설정하는 게 간단한 일은 아닙니다. 어려운 건 아니지만, *반드시* 어느 정도의 시간을 써서 오디오 테스트를 하셔야 할 겁니다. 조절해보고, 짧게 녹음을 해보고 (혹은 오디오 모니터링 기능을 활용해보고), 들어보는 걸 반복하면서 올바른 설정을 찾아가세요.
+
 [OBS Peak Meter]: ./image/peak-meter.png
 [Reading the Volume Meter]: https://github.com/obsproject/obs-studio/wiki/Understanding-The-Mixer#reading-the-volume-meter
 [OBS Advanced Audio Properties Window]: ./image/ko/aap-window.png
