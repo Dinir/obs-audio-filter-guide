@@ -32,6 +32,18 @@
 
 미터에 대한 자세한 설명은 [공식 위키 (영어)][Reading the Volume Meter]에서 확인하실 수 있습니다.
 
+## 오디오 모니터링
+
+![오디오 고급 설정][OBS Advanced Audio Properties Window]
+
+톱니바퀴 아이콘을 통해서 오디오 고급 설정을 볼 수 있습니다. 여기서는 현재 사용 중인 장면에 적용되는 채널들을 더 다양하게 조절할 수 있으며, 오디오 모니터링도 그중 하나입니다.
+
+오디오 모니터링은 보통 오디오를 모니터할 별도의 장비를 갖춘 환경에서 쓰이므로, 여기서는 이를 적절하게 설정하는 방법에 대해서는 다루지 않을 겁니다. 대신 그런 장비가 없어도 사용할 수 있는 요긴한 기능을 짚고 넘어가려고 합니다.
+
+마이크의 오디오 모니터링을 '모니터링만 (출력은 제거)'로 설정하면 출력 장치를 통해서 마이크 신호를 직접 들을 수 있습니다. 이 신호는 모든 활성화된 필터를 거쳐 간 신호이므로, 슬라이더를 조절하면서 차이를 듣는 데에 활용할 수 있습니다.
+
+이 설정은 마이크 신호를 데스크톱 오디오로도 보내므로, 테스트 목적으로만 사용하는 것이 좋습니다.
+
 ## 필터 창
 
 ![필터 창][OBS Filter Window]
@@ -185,6 +197,7 @@
 
 [OBS Peak Meter]: ./image/peak-meter.png
 [Reading the Volume Meter]: https://github.com/obsproject/obs-studio/wiki/Understanding-The-Mixer#reading-the-volume-meter
+[OBS Advanced Audio Properties Window]: ./image/ko/aap-window.png
 [OBS Filter Window]: ./image/filter-window.png
 
 [Window: Noise Suppression]: ./image/ko/ns-window.png "소음 억제 창"

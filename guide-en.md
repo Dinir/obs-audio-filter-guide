@@ -34,6 +34,18 @@ Right-click or click the gear icon to access filters and other options.
 
 Detailed info about how to read this meter is available at [the official wiki][Reading the Volume Meter].
 
+## Audio Monitoring
+
+![Advanced Audio Properties Window][OBS Advanced Audio Properties Window]
+
+Through the gear icon you can access Audio Advanced Properties. There are more controls on your available channels on current scene here, including Audio Monitoring.
+
+Audio Monitoring control is mainly used for an environment where you have a separate equipment to monitor the audio so we won't go deep on how to properly set them. Instead, there's a neat feature I want to point out that we can use without having such equipment:
+
+If you set Audio Monitoring for your mic to 'Monitor Only (mute output)', you can directly hear your mic signal through the output device. The signal passed through all active filters, so you can use this to hear the difference while adjusting sliders.
+
+This setting sends the mic signal to Desktop Audio as well, so it's better to use this only for a testing purpose.
+
 ## Filter Window
 
 ![Filter Window][OBS Filter Window]
@@ -193,6 +205,7 @@ And this is all the explanation for the five filters in OBS. It's not a simple t
 
 [OBS Peak Meter]: ./image/peak-meter.png
 [Reading the Volume Meter]: https://github.com/obsproject/obs-studio/wiki/Understanding-The-Mixer#reading-the-volume-meter
+[OBS Advanced Audio Properties Window]: ./image/en/aap-window.png
 [OBS Filter Window]: ./image/filter-window.png
 
 [Window: Noise Suppression]: ./image/en/ns-window.png "window of Noise Suppression"
