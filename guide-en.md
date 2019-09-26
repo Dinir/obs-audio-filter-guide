@@ -201,7 +201,7 @@ Usually, Limiter should be the last filter for a channel - it puts the final nai
 
 - - -
 
-And this is all the explanation for the five filters in OBS. It's not a simple task to configure some or all of these filters for your environment. It's not necessarily hard, but you *will* need to spend some time to actually test the audio - tweak a bit, make a short record, listen to it, and rinse and repeat until you feel everything is alright.
+And this is all the explanation for the five filters in OBS. It's not a simple task to configure some or all of these filters for your environment. It's not necessarily hard, but you *will* need to spend some time to actually test the audio - tweak a bit, make a short record (or test using the Audio Monitoring feature), listen to it, and rinse and repeat until you feel everything is alright.
 
 [OBS Peak Meter]: ./image/peak-meter.png
 [Reading the Volume Meter]: https://github.com/obsproject/obs-studio/wiki/Understanding-The-Mixer#reading-the-volume-meter
